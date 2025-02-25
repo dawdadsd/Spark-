@@ -1,0 +1,79 @@
+{
+  "groups": [
+    {
+      "name": "spark",
+      "type": "sparkanalysis.config.SparkProperties",
+      "sourceType": "sparkanalysis.config.SparkProperties"
+    },
+    {
+      "name": "hadoop",
+      "type": "sparkanalysis.config.HadoopProperties",
+      "sourceType": "sparkanalysis.config.HadoopProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spark.app.name",
+      "type": "java.lang.String",
+      "description": "Name of the Spark application",
+      "sourceType": "sparkanalysis.config.SparkProperties"
+    },
+    {
+      "name": "spark.master",
+      "type": "java.lang.String",
+      "description": "Spark master URL",
+      "defaultValue": "local[*]"
+    },
+    {
+      "name": "spark.driver.memory",
+      "type": "java.lang.String",
+      "description": "Amount of memory to allocate to the Spark driver process",
+      "defaultValue": "2G"
+    },
+    {
+      "name": "spark.executor.memory",
+      "type": "java.lang.String",
+      "description": "Amount of memory to allocate to each Spark executor",
+      "defaultValue": "2G"
+    },
+    {
+      "name": "spark.local.dir",
+      "type": "java.lang.String",
+      "description": "Directory to use for local storage of Spark temporary files"
+    },
+    {
+      "name": "hadoop.home.dir",
+      "type": "java.lang.String",
+      "description": "Hadoop home directory path"
+    },
+    {
+      "name": "hadoop.tmp.dir",
+      "type": "java.lang.String",
+      "description": "Hadoop temporary directory path"
+    },
+    {
+      "name": "hadoop.user.name",
+      "type": "java.lang.String",
+      "description": "Username for Hadoop operations"
+    }
+  ],
+  "hints": [
+    {
+      "name": "spark.master",
+      "values": [
+        {
+          "value": "local",
+          "description": "Run Spark locally with one worker thread"
+        },
+        {
+          "value": "local[*]",
+          "description": "Run Spark locally with as many worker threads as logical cores"
+        },
+        {
+          "value": "local[K]",
+          "description": "Run Spark locally with K worker threads"
+        }
+      ]
+    }
+  ]
+}
